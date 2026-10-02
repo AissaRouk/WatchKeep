@@ -3,13 +3,23 @@
     "name": "Watchkeep",
     "version": "0.1.0",
     "description": "Automatically remembers where you stopped watching.",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "watchkeep@yourname",
+            "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+            }
+        }
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
     "background": {
         "scripts": [
             "background.js"
         ]
-    },
-    "action": {
-        "default_popup": "popup.html"
     },
     "content_scripts": [
         {
