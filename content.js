@@ -1,7 +1,8 @@
 console.log("🔥 Watchkeep loaded!");
 
-const video = document.querySelector("video");
+const videos = document.querySelectorAll("video");
 let lastSavedTime = 0;
+const THRESHOLD_SECONDS = 15 * 60; // 15 minutes
 
 const saveProgress = () => {
     console.log(
@@ -16,6 +17,8 @@ const saveProgress = () => {
         duration: video.duration
     });
 };
+
+const video = videos.length > 0 ? Array.from(videos).find(video => video.duration > THRESHOLD_SECONDS) : null;
 
 if (video) {
     console.log("🎬 Video found!");
