@@ -5,7 +5,7 @@
     "description": "Automatically remembers where you stopped watching.",
     "browser_specific_settings": {
         "gecko": {
-            "id": "watchkeep@yourname",
+            "id": "watchkeep@AissaRouk",
             "data_collection_permissions": {
                 "required": [
                     "none"
