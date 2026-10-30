@@ -1,5 +1,5 @@
 async function loadVideos() {
-    const { videos = [] } = await browser.storage.local.get("videos");
+    const { videos = [] } = await browser.storage.local.get(VIDEOS);
 
     const list = document.querySelector(".video-list");
 
