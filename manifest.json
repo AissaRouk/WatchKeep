@@ -6,6 +6,7 @@
     "browser_specific_settings": {
         "gecko": {
             "id": "watchkeep@AissaRouk",
+            "update_url": "https://github.com/AissaRouk/WatchKeep/updates.json",
             "data_collection_permissions": {
                 "required": [
                     "none"

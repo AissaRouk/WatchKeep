@@ -1,0 +1,12 @@
+{
+    "addons": {
+        "watchkeep@yourdomain.com": {
+            "updates": [
+                {
+                    "version": "0.1.0",
+                    "update_link": "https://github.com/AissaRouk/WatchKeep/releases/download/v0.1.0/watchkeep-0.1.0.xpi"
+                }
+            ]
+        }
+    }
+}
