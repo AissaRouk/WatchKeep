@@ -1,0 +1,35 @@
+name: Sign Extension
+
+on:
+  push:
+    tags:
+      - 'v*' # Triggers whenever you push a tag like v0.1.0
+
+jobs:
+  build-and-sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install web-ext
+        run: npm install -g web-ext
+
+      - name: Sign Extension with Mozilla AMO
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
+          WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+        run: |
+          web-ext sign \
+            --channel=unlisted \
+            --api-key=$WEB_EXT_API_KEY \
+            --api-secret=$WEB_EXT_API_SECRET
+
+      - name: Create GitHub Release & Upload Signed XPI
+        uses: softprops/action-gh-release@v1
+        with:
+          files: web-ext-artifacts/*.xpi
